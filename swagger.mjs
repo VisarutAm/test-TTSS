@@ -90,7 +90,7 @@
  *       '406':
  *         description: Time constraint issue
  *       '500':
- *         description: Add Trucks Data failed.
+ *         description: Assignment process failed.
  */
 
 //----Get last assignment----//

@@ -39,7 +39,7 @@ assignments.post("/assignments", async (req, res) => {
   try {    
     const cacheData = await redisClient.get("data");  
     if (!cacheData) {      
-      const result = await axios.get("http://localhost:4000/api/data");
+      const result = await axios.get("https://test-ttss.onrender.com/api/data");
 
       await redisClient.setEx("data", 1800, JSON.stringify(result.data));
 
