@@ -46,7 +46,8 @@ assignments.post("/assignments", async (req, res) => {
       console.log("Cache Created ");
       return res.status(200).json({ message: "Cache Created" });
     } else {        
-      const parsedCache = JSON.parse(cacheData);     
+      const parsedCache = JSON.parse(cacheData);  
+         
       const filteredData = parsedCache
         .filter((item) => item.area_id === newAssignment.area_id)
         .filter((item) => {
