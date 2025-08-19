@@ -30,6 +30,10 @@ if(process.env.NODE_ENV === "production") job.start();
 app.use(express.json());
 app.use(cors());
 
+app.get("/api/health",(req,res)=>{
+    res.status(200).json({success:true});
+});
+
 app.use('/api', areas);
 app.use('/api', trucks);
 app.use('/api', assignments);
