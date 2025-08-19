@@ -6,6 +6,7 @@ import swaggerUi from "swagger-ui-express";
 import areas from "./routes/areas-routes.mjs";
 import trucks from "./routes/trucks-routes.mjs";
 import assignments from "./routes/assignments-routes.mjs";
+import job from "./utils/cron.mjs";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -23,6 +24,8 @@ const swaggerOptions = {
 
 const swaggerDocs=swaggerJSDoc(swaggerOptions);
 app.use('/swagger',swaggerUi.serve,swaggerUi.setup(swaggerDocs));
+
+if(ENV.NODE_ENV === "production") job.start();
 
 app.use(express.json());
 app.use(cors());
