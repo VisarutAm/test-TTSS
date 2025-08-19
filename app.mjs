@@ -32,7 +32,7 @@ app.use('/api', trucks);
 app.use('/api', assignments);
 
 app.get("/test", (req, res) => {
-    return res.json("Server API is working 🚀");
+    res.status(200).json("Server API is working 🚀");
   });
   
   app.listen(port, () => {
