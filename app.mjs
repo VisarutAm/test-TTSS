@@ -25,7 +25,7 @@ const swaggerOptions = {
 const swaggerDocs=swaggerJSDoc(swaggerOptions);
 app.use('/swagger',swaggerUi.serve,swaggerUi.setup(swaggerDocs));
 
-if(ENV.NODE_ENV === "production") job.start();
+if(process.env.NODE_ENV === "production") job.start();
 
 app.use(express.json());
 app.use(cors());
